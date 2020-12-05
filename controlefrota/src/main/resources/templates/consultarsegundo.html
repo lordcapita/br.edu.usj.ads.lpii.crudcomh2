@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <title>Motorista - Consultar</title>
+</head>
+<body>
+
+
+    <div class="container">
+        <h1>Motorista - Consultar</h1>
+
+        <div>
+            <form method="POST" action="/consultarsegundo">
+                <div class="form-group">
+                    <label for="cnh">Cnh</label>
+                    <input type="text" name="cnh" id="cnh" th:value="${cnh}"/>
+                </div>
+                <input type="submit" class="btn btn-primary" value="Consultar"/>
+            </form>
+        </div>
+
+        <div>
+            <div class="border" th:if="${lista2 != null}">
+                <div class="row m-1" th:each="motorista : ${lista2}">
+                    <a th:href="@{/registrosegundop{id}(id=${motorista.id})}" th:text="${motorista.cnh}"></a>
+        </div>
+
+    </div>
+
+    <a href="/">Voltar</a>
+
+    <script src="/js/jquery-3.5.1.slim.min.js"></script>
+    <script src="/js/bootstrap.bundle.min.js" ></script>
+    
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <title>CONTROLE DE FROTA</title>
+</head>
+<body>
+    <div class="jumbotron text-center">
+    <div class="container">
+       
+        <h1>Veiculos</h1>
+        <p>Lista de Veiculos</p>
+    </div>
+        <div class="m-1">  
+
+         <a class="col-4 btn btn-primary" href="/cadastro">Novo Cadastro</a>
+         <a class="col-4 btn btn-primary" href="/consultar">Consultar Veiculo</a>
+        </div> 
+
+        <div class="border" th:if="${lista != null}">
+            <div class="row m-1" th:each="veiculo : ${lista}">
+                <h5 th:text="Placa"></h5>
+
+           <div class ="col-sm-3 borde-bottom">
+
+        
+
+            <a th:href="@{/registro/{id}(id=${veiculo.id})}" th:text="${veiculo.placa}"></a>
+          </div>
+
+            <div class ="col-sm-3 text-center">
+
+                <a class="btn btn-success btn-sm" th:href="@{/editar/{id}(id=${veiculo.id})}">Alterar</a>
+            </div>
+
+            <div class ="col-sm-3 text-center">
+
+                <a class="btn btn-danger btn-sm" th:href="@{/excluir/{id}(id=${veiculo.id})}">Excluir</a>
+            </div>
+    </div>
+<div>
+    <br>
+  <br>
+    <br>
+    <h1>Motoristas</h1>
+    <p>Lista de Motoristas</p>
+</div>
+    <div class="m-5">  
+        <a class="col-4 btn btn-primary" href="/cadastrosegundo">Novo Cadastro</a>
+        <a class="col-4 btn btn-primary" href="/consultarsegundo">Consultar Motorista</a>
+       </div> 
+
+       <div class="border" th:if="${lista2 != null}">
+        <div class="row m-1" th:each="motorista : ${lista2}">
+
+            <h5 th:text="CNH"></h5>
+            
+          <div class ="col-sm-3 borde-bottom">
+             <a th:href="@{/registrosegundo/{id}(id=${motorista.id})}" th:text="${motorista.cnh}"></a>
+         </div>
+
+           <div class ="col-sm-3 text-center">
+               <a class="btn btn-success btn-sm" th:href="@{/editarsegundo/{id}(id=${motorista.id})}">Alterar</a>
+           </div>
+
+           <div class ="col-sm-3 text-center">
+               <a class="btn btn-danger btn-sm" th:href="@{/excluirsegundo/{id}(id=${motorista.id})}">Excluir</a>
+           </div>
+   </div>
+</div>
+</div>
+
+    
+    <script src="/js/jquery-3.5.1.slim.min.js"></script>
+    <script src="/js/bootstrap.bundle.min.js" ></script>
+    
+</body>
+</html>

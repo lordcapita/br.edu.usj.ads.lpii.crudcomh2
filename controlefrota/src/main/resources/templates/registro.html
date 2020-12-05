@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <title>Controle Frotas - Registros</title>
+</head>
+<body>
+
+    <div class="container">
+
+    <h1>Veiculos - Registros</h1>
+
+            <h2 th:text="${veiculo.placa}"></h2>
+            <h3 th:text="${veiculo.tipo}"></h3>
+            <h3 th:text="${veiculo.modelo}"></h3>
+
+            <a class="btn btn-primary" href="/">Voltar</a>
+    </div>
+
+    <script src="/js/jquery-3.5.1.slim.min.js"></script>
+    <script src="/js/bootstrap.bundle.min.js" ></script>
+
+</body>
+</html>

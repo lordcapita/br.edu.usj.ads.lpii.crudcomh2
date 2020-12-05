@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <title>CONTROLE DE FROTA - Cadastro</title>
+</head>
+<body>
+    <div class="container">
+    <h1>Veiculo - Cadastro</h1>
+
+<form method="POST" action="/adicionarsegundo">
+    <div class="form-group">
+        <label for="cnh">CNH:</label> 
+        <input type="text" class="form-control" name="cnh" id="cnh" th:value="${motorista.cnh}" /> 
+    </div>
+    <div class="form-group">
+        <label for="tipo">Nome:</label> 
+            <input class="form-control" name="nome" id="nome" th:value="${motorista.nome}"/>
+        </div>
+        <div class="form-group">
+            <label for="telfone">Telefone:</label> 
+            <input type="text" class="form-control" name="telefone" id="telefone" th:value="${motorista.telefone}" />
+        </div>
+        <div>
+            <input type="hidden" name="id" id="id" th:value="${motorista.id}" />
+            <input type="submit" class="btn btn-primary" value= "Salvar" />
+        </div>
+        <div>
+            <script src="/js/jquery-3.5.1.slim.min.js"></script>
+            <script src="/js/bootstrap.bundle.min.js" ></script>
+   
+</form>
+         <a href="/">Voltar</a>
+    </div>  
+
+</body>
+</html>
